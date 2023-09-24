@@ -13,4 +13,7 @@ for( let i = 0; i < data.length; i +=1){
     newDiv.appendChild(img)
     console.log(img)
     itemsContainer.appendChild(newDiv);
+
+   
+
 }
