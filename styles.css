@@ -13,12 +13,48 @@ body{
 }
 .page-header ul {
     display: flex;
-    flex-direction: row;
+    flex-direction:row-reverse;
     justify-content: space-between;
     list-style: none;
-}
+    
+  }
 .page-header a {
     display: block;
     padding:0.5em;
     text-decoration:none;
+    
+  }
+  .items {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    
+    
+  }
+  .item{
+    border-style: solid;
+    justify-content: space-between;
+    
+  }
+  .items img{
+    width:100%;
+    height:auto;
+    margin: 0%;
+    
+  }
+  .items p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10.5px;
+    margin-left: 10px;
+  }
+  .item button{
+    display: block;
+    padding: 5%;
+    width: auto;
+    margin-bottom: 5px;
+    text-align: bottom;
+    
   }

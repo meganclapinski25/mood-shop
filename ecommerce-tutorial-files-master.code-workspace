@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "ecommerce-tutorial-files-master",
+			"path": "../../../Downloads/ecommerce-tutorial-files-master"
+		},
+		{
+			"name": "mood-shop",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "mood-shop"
+	}
+}
