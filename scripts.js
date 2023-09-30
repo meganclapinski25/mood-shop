@@ -32,8 +32,8 @@ const cart = []
 
 
 
-console.log(obj)
 
+//add items 
 function addItems(name, price){
     for(let i = 0; i < cart.length; i+=1){
         if(cart[i].name === name){
@@ -58,10 +58,12 @@ function showItems(){
    
     console.log(`Total in cart : $${getTotal()}`)
 }
+
+
 //Get Quantity
 function getQty(){
     let qty = 0;
-    for(i =0; i < cart.length; i+=1){
+    for(let i =0; i < cart.length; i+=1){
         qty += cart[i].qty
     }
     return qty
@@ -76,10 +78,34 @@ function getTotal(){
 }
 return total.toFixed(2)
 }
+
+function removeItem(name, qty = 0){
+    for(let i = 0; i < cart.length; i+=1){
+        if(cart[i].name === name){
+            if(qty >0){
+                cart[i].qty -=qty
+            }
+            
+            if(cart[i].qty < 1 || qty === 0){
+                cart.splice(i, 1)
+            }
+            //cart.splice(i, 1)
+            return
+        }
+    }
+
+}
+
+
+
 addItems('apple', .99)
 addItems('orange', .50)
 addItems('pineapple', 1.99)
 addItems('watermelon', 2.99)
 
+showItems()
+
+removeItem('apple')
+removeItem('orange')
 showItems()
 
