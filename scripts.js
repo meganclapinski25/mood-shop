@@ -1,6 +1,10 @@
 import data from './data.js'
 const itemsContainer = document.querySelector('#items')
+const itemList = document.getElementById('item-list')
+const cartQty = document.getElementById('cart-qty')
+const cartTotal = document.getElementById('cart-total')
 
+//itemList.innerHTML = '<li> Hello World </li>'
 
 for( let i = 0; i < data.length; i +=1){
     const newDiv = document.createElement('div');
@@ -50,13 +54,21 @@ function addItems(name, price){
 //show items
 function showItems(){
     const qty = getQty()
-    console.log(`You have ${qty} items in your cart`)
+    //console.log(`You have ${qty} items in your cart`)
+    cartQty.innerHTML = `You have ${qty} items in your cart`
+
+    let itemStr = ''
     for (let i = 0; i < cart.length; i +=1){
-        console.log(`-${cart[i].name} $${cart[i].price} x ${cart[i].qty}`)
+        //console.log(`-${cart[i].name} $${cart[i].price} x ${cart[i].qty}`)
         
+        
+       const {name , price, qty} = cart[i]
+        itemStr += `<li> ${name} $${price} x ${qty} =  ${qty * price} </li>`
     }
-   
-    console.log(`Total in cart : $${getTotal()}`)
+    itemList.innerHTML = itemStr
+
+    //console.log(`Total in cart : $${getTotal()}`)
+    cartTotal.innerHTML = `Total in cart : $${getTotal()}`
 }
 
 
@@ -98,14 +110,5 @@ function removeItem(name, qty = 0){
 
 
 
-addItems('apple', .99)
-addItems('orange', .50)
-addItems('pineapple', 1.99)
-addItems('watermelon', 2.99)
-
-showItems()
-
-removeItem('apple')
-removeItem('orange')
-showItems()
+//console.log(itemList)
 
