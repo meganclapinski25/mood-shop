@@ -4,6 +4,13 @@ const itemList = document.getElementById('item-list')
 const cartQty = document.getElementById('cart-qty')
 const cartTotal = document.getElementById('cart-total')
 
+
+
+
+//all_items_button.forEach(elt => elt.addEventListener('click', () => {
+   // addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
+   // showItems()
+  //}))
 //itemList.innerHTML = '<li> Hello World </li>'
 
 for( let i = 0; i < data.length; i +=1){
@@ -32,13 +39,21 @@ for( let i = 0; i < data.length; i +=1){
     newDiv.appendChild(button)
 
 }
+
+const all_items_button = Array.from(document.querySelectorAll("button"))
+all_items_button.forEach(elt => elt.addEventListener('click', () => {
+    addItem(elt.getAttribute('id'), elt.getAttribute('data-price'))
+    showItems()
+  }))
+//console.log(all_items_button)
 const cart = []
 
 
 
 
 //add items 
-function addItems(name, price){
+function addItem(name, price){
+    const all_items_button = Array.from(document.querySelectorAll("button"))
     for(let i = 0; i < cart.length; i+=1){
         if(cart[i].name === name){
             cart[i].qty +=1
@@ -48,11 +63,13 @@ function addItems(name, price){
     }
     const item = { name, price, qty: 1}
     cart.push(item);
+    
 
 }
 
 //show items
 function showItems(){
+    const all_items_button = Array.from(document.querySelectorAll("button"))
     const qty = getQty()
     //console.log(`You have ${qty} items in your cart`)
     cartQty.innerHTML = `You have ${qty} items in your cart`
@@ -67,8 +84,10 @@ function showItems(){
     }
     itemList.innerHTML = itemStr
 
-    //console.log(`Total in cart : $${getTotal()}`)
-    cartTotal.innerHTML = `Total in cart : $${getTotal()}`
+    console.log(`Total in cart : $${getTotal()}`)
+    //cartTotal.innerHTML = `Total in cart : $${getTotal()}`
+    
+
 }
 
 
@@ -107,7 +126,6 @@ function removeItem(name, qty = 0){
     }
 
 }
-
 
 
 //console.log(itemList)
