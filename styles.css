@@ -25,11 +25,13 @@ body{
     
   }
   .items {
+    padding-top: 5%;
     width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1em;
+    
     
     
   }
@@ -42,19 +44,23 @@ body{
     width:100%;
     height:auto;
     margin: 0%;
-    
+    display: flex;
+    height:min-content
   }
   .items p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 10.5px;
     margin-left: 10px;
+    display: flex;
+    
   }
   .item button{
-    display: block;
-    padding: 5%;
+    display: flex;
     width: auto;
     margin-bottom: 5px;
+    margin: auto;
+    text-align: center;
     text-align: bottom;
-    
+    padding: 5%;
   }
